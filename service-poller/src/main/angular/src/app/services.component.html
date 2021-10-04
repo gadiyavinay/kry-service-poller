@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Services</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Url</th>
+        <th>Created Date</th>
+        <th>Status</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let service of services;">
+        <td>{{service.name}}</td>
+        <td>{{service.url}}</td>
+        <td>{{service.createdAt}}</td>
+        <td>{{service.status}}</td>
+        <td>
+        	<button type="submit" class="btn btn-danger" 
+        	(click)="deleteService(service.name)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

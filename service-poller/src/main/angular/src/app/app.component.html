@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<div fxFlex="25" class="sec1">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7 mrgnbtm">
+				<h2>Create Service</h2>
+				<form [formGroup]="serviceForm" (ngSubmit)="onSubmit()">
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="exampleInputName">Name</label> <input type="text"
+								class="form-control" formControlName="name" id="name"
+								placeholder="ex. Google">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="exampleInputUrl">Url</label> <input type="text"
+								class="form-control" formControlName="url" id="url"
+								placeholder="ex. https://www.google.com" pattern="https?://.+">
+						</div>
+					</div>
+					<button type="submit" [disabled]="!serviceForm.valid"
+						class="btn btn-primary mrgnbtm">Add/Update</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div fxFlex="75" class="sec2 mrgnbtm">
+	<app-services *ngIf="services.length !== 0" [services]="services"></app-services>
+</div>
+
