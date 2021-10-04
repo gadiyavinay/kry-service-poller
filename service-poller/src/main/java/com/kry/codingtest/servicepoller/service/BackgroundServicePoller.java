@@ -5,6 +5,9 @@ package com.kry.codingtest.servicepoller.service;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.UnknownHostException;
+
+import javax.net.ssl.SSLHandshakeException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +43,12 @@ public class BackgroundServicePoller {
 			else {
 				service.setStatus(Status.OK);
 			}
+			}
+			catch(SSLHandshakeException se) {
+				service.setStatus(Status.FAIL);
+			}
+			catch(UnknownHostException ue) {
+				service.setStatus(Status.FAIL);
 			}
 			catch(Exception e) {
 				service.setStatus(Status.FAIL);
