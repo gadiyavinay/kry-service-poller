@@ -6,12 +6,12 @@ https://github.com/gadiyavinay/service-poller-kry.git
 create database service_poller_db;
 
 
-## Run Java Code on 8080
+## Run Java Code with below commands in terminal
 cd /service-poller-kry/service-poller\
 ./gradlew clean build\
 ./gradlew run
 
-## Run Angular on port 4200
+## Run Angular with below commands
 cd /src/main/angular\ 
 npm install\
 npm start
