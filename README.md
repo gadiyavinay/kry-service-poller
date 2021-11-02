@@ -1,4 +1,4 @@
-# service-poller-kry
+# service-poller
 ## Clone project
 https://github.com/gadiyavinay/service-poller-kry.git
 
